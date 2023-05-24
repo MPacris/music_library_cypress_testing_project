@@ -54,6 +54,7 @@ function AddSongForm({ onAddSong }) {
         placeholder="Title"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
+        data-cy= 'add-song-form_title'
         required
       />
       <input
@@ -61,12 +62,14 @@ function AddSongForm({ onAddSong }) {
         placeholder="Album"
         value={album}
         onChange={(event) => setAlbum(event.target.value)}
+        data-cy='add-song-form_album'
       />
       <input
         type="text"
         placeholder="Artist"
         value={artist}
         onChange={(event) => setArtist(event.target.value)}
+        data-cy='add-song-form_artist'
         required
       />
       <input
@@ -74,6 +77,7 @@ function AddSongForm({ onAddSong }) {
         placeholder="Genre"
         value={genre}
         onChange={(event) => setGenre(event.target.value)}
+        data-cy='add-song-form_genre'
       />
       <input
         type="text"
@@ -81,12 +85,14 @@ function AddSongForm({ onAddSong }) {
         pattern="\d{4}-\d{2}-\d{2}"
         value={releaseDate}
         onChange={(event) => setReleaseDate(event.target.value)}
+        data-cy='add-song-form_release-date'
       />
       <input
         type="text"
         placeholder="Running Time"
         value={runningTime}
         onChange={(event) => setRunningTime(event.target.value)}
+        data-cy='add-song-form_running-time'
       />
       <button type="submit">Add Song</button>
       <button type="button" onClick={handleCancel}>Cancel</button>
