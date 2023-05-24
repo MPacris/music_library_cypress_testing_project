@@ -1,0 +1,36 @@
+html,body {
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+
+}
+
+.container-all {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.action-container {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-bar,
+.filter-section,
+.add-song-form {
+  flex-basis: 30%;
+}
+
+.table-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
