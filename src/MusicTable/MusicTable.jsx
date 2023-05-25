@@ -34,17 +34,13 @@ function MusicTable({ songs }) {
     handleCloseModal();
   }
 
-  function handleDelete(songId, songName, artistName) {
-    const confirmDelete = window.confirm(`Are you sure you want to delete "${songName}" by ${artistName}?`);
-    if (confirmDelete) {
-      try {
-        axios.delete(`http://127.0.0.1:5000/api/songs/${songId}`).then(() => {
-          setSelectedSong(null);
-          fetchData(); // Refresh data after deletion
-        });
-      } catch (error) {
-        console.log('Error in delete song API call!', error);
-      }
+  function handleDelete(songId) {
+    try {
+      axios.delete(`http://127.0.0.1:5000/api/songs/${songId}`).then(() => {
+        fetchData(); // Refresh data after deletion
+      });
+    } catch (error) {
+      console.log('Error in delete song API call!', error);
     }
   }
 
@@ -105,7 +101,7 @@ function MusicTable({ songs }) {
                 <button onClick={() => handleUpdate(song)}>Edit</button>
               </td>
               <td>
-                <button onClick={() => handleDelete(song.id, song.title, song.artist)}>Delete</button>
+              <button onClick={() => handleDelete(song.id)} data-cy="music-table-delete-button">Delete</button>
               </td>
             </tr>
           ))}
