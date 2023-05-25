@@ -18,3 +18,4 @@ describe('Complete add song', () => {
     cy.contains('Paul Revere').should('exist');
   });
 });
+

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddSongForm.css';
 
-function AddSongForm({ onAddSong }) {
+function AddSongForm({ onAddSong, updateMusicTable }) {
   const [title, setTitle] = useState('');
   const [album, setAlbum] = useState('');
   const [artist, setArtist] = useState('');
@@ -30,6 +30,9 @@ function AddSongForm({ onAddSong }) {
       setGenre('');
       setReleaseDate('');
       setRunningTime('');
+
+      // Call the updateMusicTable function passed from the App component
+      updateMusicTable();
     } catch (ex) {
       console.log('Error in add song API call!', ex);
     }

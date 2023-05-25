@@ -6,7 +6,6 @@ import Filter from './Filter/Filter';
 import AddSongForm from './AddSongForm/AddSongForm';
 import './App.css';
 
-
 function App() {
   const [songs, setSongs] = useState([]);
   const [filteredSongs, setFilteredSongs] = useState([]);
@@ -79,6 +78,10 @@ function App() {
     }
   }
 
+  function updateMusicTable() {
+    fetchData();
+  }
+
   return (
     <div className='container-all'>
       <h1 className='header'>Music Library</h1>
@@ -93,7 +96,7 @@ function App() {
         </div>
 
         <div className='add-song-form'>
-          <AddSongForm onAddSong={addSong} />
+          <AddSongForm onAddSong={addSong} updateMusicTable={updateMusicTable} />
         </div>
       </div>
 
