@@ -20,7 +20,7 @@ function Filter({ onFilter, onResetFilter }) {
   return (
     <form className='filter-section'>
       <h3>Filter By</h3>
-      <select value={filterType} onChange={(event) => setFilterType(event.target.value)}>
+      <select value={filterType} data-cy="filter-selector" onChange={(event) => setFilterType(event.target.value)}>
         <option value="">Select Filter Type</option>
         <option value="album">Album</option>
         <option value="artist">Artist</option>
@@ -29,6 +29,7 @@ function Filter({ onFilter, onResetFilter }) {
         <option value="title">Title</option>
       </select>
       <input
+        data-cy="filter-input"
         type="text"
         placeholder="Filter Value"
         value={filterValue}
@@ -36,7 +37,7 @@ function Filter({ onFilter, onResetFilter }) {
         required
       />
       <div>
-        <button type="submit" onClick={handleSubmit}>Apply Filter</button>
+        <button data-cy="filter-submit" type="submit" onClick={handleSubmit}>Apply Filter</button>
         <button type="button" onClick={handleReset}>Reset Filter</button>
       </div>
     </form>

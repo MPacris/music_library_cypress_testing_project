@@ -8,6 +8,7 @@ describe('Complete add song', () => {
     cy.get('input[data-cy="add-song-form_genre"]').focus().type('Hip-Hop');
     cy.get('input[data-cy="add-song-form_release-date"]').focus().type('1986-02-28');
     cy.get('input[data-cy="add-song-form_running-time"]').focus().type('221');
+ 
 
 
 
@@ -20,16 +21,30 @@ describe('Complete add song', () => {
 });
 
 
+describe('Filter for Genre', () => {
+  it('passes', () => {
+    cy.visit('http://localhost:3000/');
+
+    cy.get('select[data-cy="filter-selector"]').focus().select('genre');
+    cy.get('input[data-cy="filter-input"]').focus().type('Hip-Hop')
+    
+    cy.get('tbody[data-cy="music-table-data"]').contains('td','Paul Revere').should('exist')
+ 
+  });
+});
+
+
+
 
 describe('Test the SearchBar', () => {
   it('passes', () => {
     cy.visit('http://localhost:3000/');
 
     cy.get('input[data-cy="searchbar-input"]').focus().type('Paul Revere');
-    cy.get('button[data-cy="add-song-form_submit-button"]').click();
+    cy.get('button[data-cy="searchbar-submit-button"]').click();
     cy.wait(2000); 
-    cy.get('tbody[data-cy="music-table-data"]').contains('td','Paul Rever').should('exist')
-
-    
+    cy.get('tbody[data-cy="music-table-data"]').contains('td','Paul Revere').should('exist')
+ 
   });
 });
+
