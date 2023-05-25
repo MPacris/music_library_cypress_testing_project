@@ -19,3 +19,17 @@ describe('Complete add song', () => {
   });
 });
 
+
+
+describe('Test the SearchBar', () => {
+  it('passes', () => {
+    cy.visit('http://localhost:3000/');
+
+    cy.get('input[data-cy="searchbar-input"]').focus().type('Paul Revere');
+    cy.get('button[data-cy="add-song-form_submit-button"]').click();
+    cy.wait(2000); 
+    cy.get('tbody[data-cy="music-table-data"]').contains('td','Paul Rever').should('exist')
+
+    
+  });
+});

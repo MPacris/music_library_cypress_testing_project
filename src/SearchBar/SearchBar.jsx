@@ -24,9 +24,10 @@ function SearchBar({ onSearch, onCancelSearch }) {
         value={term}
         onChange={(event) => setTerm(event.target.value)}
         className='search-bar'
+        data-cy="searchbar-input"
       />
       <div className='search-bar-buttons'>
-      <button type="submit">Search</button>
+      <button type="submit" data-cy="searchbar-submit-button">Search</button>
       <button type="button" onClick={handleCancel}>Clear</button>
       </div>
     </form>

@@ -91,7 +91,7 @@ function MusicTable({ songs }) {
             <th>Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody data-cy="music-table-data">
           {songs.map((song) => (
             <tr key={song.id}>
               <td>{song.title}</td>
