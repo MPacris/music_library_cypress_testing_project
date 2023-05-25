@@ -31,11 +31,11 @@ function UpdateSongModal({ song, onUpdate, onCancel }) {
   }
 
   return (
-    <div className="update-song-modal">
+    <div className="update-song-modal" data-cy ="update-song-modal">
       <h3>Edit Song</h3>
       <div className="input-group">
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" value={updatedSong.title} onChange={handleInputChange} />
+        <input type="text" name="title" id="title" data-cy ="update-song-modal-title"value={updatedSong.title} onChange={handleInputChange} />
       </div>
       <div className="input-group">
         <label htmlFor="album">Album:</label>
