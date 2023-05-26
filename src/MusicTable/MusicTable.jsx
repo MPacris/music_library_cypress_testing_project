@@ -91,12 +91,12 @@ function MusicTable({ songs }) {
           {songs.map((song) => (
             <tr key={song.id}>
               <td data-cy="music-table-data-title"> {song.title}</td>
-              <td> {song.album}</td>
-              <td> {song.artist}</td>
-              <td> {song.genre}</td>
-              <td> {song.release_date}</td>
-              <td> {song.running_time}</td>
-              <td>{song.likes}</td>
+              <td data-cy="music-table-data-album"> {song.album}</td>
+              <td data-cy="music-table-data-artist"> {song.artist}</td>
+              <td data-cy="music-table-data-genre"> {song.genre}</td>
+              <td data-cy="music-table-data-release-date"> {song.release_date}</td>
+              <td data-cy="music-table-data-running-tim"> {song.running_time}</td>
+              <td data-cy="music-table-data-likes">{song.likes}</td>
               <td>
                 <button onClick={() => handleUpdate(song)}>Edit</button>
               </td>

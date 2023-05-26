@@ -35,19 +35,19 @@ function UpdateSongModal({ song, onUpdate, onCancel }) {
       <h3>Edit Song</h3>
       <div className="input-group">
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" data-cy ="update-song-modal-title"value={updatedSong.title} onChange={handleInputChange} />
+        <input type="text" name="title" id="title" data-cy ="update-song-modal-title" value={updatedSong.title} onChange={handleInputChange} />
       </div>
       <div className="input-group">
         <label htmlFor="album">Album:</label>
-        <input type="text" name="album" id="album" value={updatedSong.album} onChange={handleInputChange} />
+        <input type="text" name="album" id="album" data-cy ="update-song-modal-album" value={updatedSong.album} onChange={handleInputChange} />
       </div>
       <div className="input-group">
         <label htmlFor="artist">Artist:</label>
-        <input type="text" name="artist" id="artist" value={updatedSong.artist} onChange={handleInputChange} />
+        <input type="text" name="artist" id="artist" data-cy ="update-song-modal-artist" value={updatedSong.artist} onChange={handleInputChange} />
       </div>
       <div className="input-group">
         <label htmlFor="genre">Genre:</label>
-        <input type="text" name="genre" id="genre" value={updatedSong.genre} onChange={handleInputChange} />
+        <input type="text" name="genre" id="genre" data-cy ="update-song-modal-genre" value={updatedSong.genre} onChange={handleInputChange} />
       </div>
       <div className="input-group">
         <label htmlFor="release_date">Release Date:</label>
@@ -57,6 +57,7 @@ function UpdateSongModal({ song, onUpdate, onCancel }) {
           id="release_date"
           value={updatedSong.release_date}
           onChange={handleInputChange}
+          data-cy ="update-song-modal-release-date"
         />
       </div>
       <div className="input-group">
@@ -67,6 +68,7 @@ function UpdateSongModal({ song, onUpdate, onCancel }) {
           id="running_time"
           value={updatedSong.running_time}
           onChange={handleInputChange}
+          data-cy ="update-song-modal-running-time"
         />
       </div>
       <div className="input-group">
