@@ -1,3 +1,7 @@
+
+
+
+
 describe('Complete add song', () => {
   it('passes', () => {
     cy.visit('http://localhost:3000/');
@@ -56,6 +60,30 @@ describe('delete the last added song', () => {
   });
 })
 
+describe('edit the title of the song that is on the 9th row', () => {
+  it('passes', () => {
+    cy.visit('http://localhost:3000/');
 
+    cy.get('tbody[data-cy="music-table-data"]')
+      .find('tr')
+      .eq(8) // Select the 9th row (index 8)
+      .within(() => {
+        cy.get('button')
+          .contains('Edit')
+          .click();
+      });
 
+    cy.get('.modal').should('be.visible'); // Wait for the modal to be visible
 
+    cy.get('input[data-cy="update-song-modal-title"]').should('exist').clear().type('Not The right song');
+    cy.get('.modal').contains('Update').click();
+
+    cy.reload() 
+
+    cy.get('tbody[data-cy="music-table-data"]')
+      .find('tr')
+      .eq(8) // Select the 9th row (index 8)
+      .find('td[data-cy="music-table-data-title"]')
+      .should('contain.text', 'Not The right song');
+  });
+});
